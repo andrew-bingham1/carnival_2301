@@ -28,5 +28,17 @@ class Carnival
     end
     carnival_revenue
   end
-  
+
+  def summary
+    summary = {}
+    total_visitors = []
+    carnival_revenue = 0 
+    rides.each do |ride|
+      total_visitors << ride.rider_log.keys
+      carnival_revenue += ride.total_revenue
+    end
+    summary[:visitor_count] = total_visitors.uniq.count
+    summary[:revenue_earned] = carnival_revenue
+    summary[total_visitors.uniq] = 
+  end
 end
