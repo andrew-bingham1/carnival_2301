@@ -10,4 +10,9 @@ class Carnival
   def add_ride(ride)
     @rides << ride
   end
+
+  def most_popular_ride
+    most_pop_arr = rides.sort_by {|ride| ride.total_rides}
+    most_pop_arr[-1]
+  end
 end

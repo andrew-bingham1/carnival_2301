@@ -92,8 +92,7 @@ RSpec.describe Carnival do
       ride2.board_rider(visitor2)
 
       ride3.board_rider(visitor2)
-require 'pry'; binding.pry
-      expect(carnival.most_popular_ride).to eq([ride1])
+      expect(carnival.most_popular_ride).to eq(ride1)
     end
   end
 
