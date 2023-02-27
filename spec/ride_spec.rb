@@ -39,7 +39,7 @@ RSpec.describe Ride do
       ride1.board_rider(visitor1)
 
       expect(ride1.rider_log).to be_a Hash
-      expect(rider_log.keys).to eq([visitor1,visitor2])
+      expect(ride1.rider_log.keys).to eq([visitor1,visitor2])
     end
   end
 
