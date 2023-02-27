@@ -21,5 +21,12 @@ class Carnival
     most_profit_arr[-1]
   end
 
-
+  def total_carnival_revenue
+    carnival_revenue = 0 
+    @rides.each do |ride|
+      carnival_revenue += ride.total_revenue
+    end
+    carnival_revenue
+  end
+  
 end
