@@ -19,6 +19,24 @@ RSpec.describe Ride do
       expect(ride1.excitement).to eq(:gentle)
       expect(ride1.total_revenue).to eq(0)
     end
+
+    it 'can count total rides' do
+      ride1 = Ride.new({
+        name: 'Carousel',
+        min_height: 24,
+        admission_fee: 1,
+        excitement: :gentle
+        })
+      visitor1 = Visitor.new('Bruce', 54, '$10')
+      visitor1.add_preference(:gentle)
+      
+      expect(ride1.total_rides).to eq(0)
+
+      ride1.board_rider(visitor1)
+      ride1.board_rider(visitor1)
+
+      expect(ride1.total_rides).to eq(2)
+    end
   end
 
   describe '#board_rider' do 
