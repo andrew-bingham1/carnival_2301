@@ -182,19 +182,17 @@ RSpec.describe Carnival do
       visitor1.add_preference(:gentle)
       visitor2.add_preference(:gentle)
       visitor3.add_preference(:gentle)
-      visitor2.add_preference(:thrilling)
+      visitor1.add_preference(:thrilling)
+      visitor3.add_preference(:thrilling)
      
-
+      expect(carnival.total_carnival_revenue).to eq(0)
       ride1.board_rider(visitor1)
       ride1.board_rider(visitor2)
       ride1.board_rider(visitor3)
-
-      ride2.board_rider(visitor1)
-      ride2.board_rider(visitor2)
-
-      ride3.board_rider(visitor2)
-
-      expect(carnival.total_carnival_revenue).to eq(15)
+      expect(carnival.total_carnival_revenue).to eq(3)
+      ride3.board_rider(visitor1)
+      ride3.board_rider(visitor3)
+      expect(carnival.total_carnival_revenue).to eq(7)
     end
   end
 
