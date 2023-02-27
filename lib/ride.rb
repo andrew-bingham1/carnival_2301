@@ -4,7 +4,8 @@ class Ride
               :admission_fee,
               :excitement,
               :total_revenue,
-              :rider_log
+              :rider_log,
+              :total_rides
              
   def initialize(details)
     @name = details[:name]
@@ -13,6 +14,7 @@ class Ride
     @excitement = details[:excitement]
     @total_revenue = 0 
     @rider_log = Hash.new(0)
+    @total_rides = 0
   end
 
   def board_rider(visitor)
@@ -20,7 +22,7 @@ class Ride
       @rider_log[visitor] += @admission_fee
       visitor.spending_money -= @admission_fee
       @total_revenue += @admission_fee
-      
+      @total_rides += 1 
     end
   end
 
