@@ -21,6 +21,20 @@ RSpec.describe Ride do
     end
   end
 
+  describe '#board_rider' do 
+    it 'can board riders' do
+      ride1 = Ride.new({
+        name: 'Carousel',
+        min_height: 24,
+        admission_fee: 1,
+        excitement: :gentle
+        })
+      visitor1 = Visitor.new('Bruce', 54, '$10')
+      visitor2 = Visitor.new('Tucker', 36, '$5')
+      visitor3 = Visitor.new('Penny', 64, '$15')
+    end
+  end
+
 end
 
 
