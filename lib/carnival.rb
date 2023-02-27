@@ -15,4 +15,11 @@ class Carnival
     most_pop_arr = rides.sort_by {|ride| ride.total_rides}
     most_pop_arr[-1]
   end
+  
+  def most_profitable_ride
+    most_profit_arr = rides.sort_by {|ride| ride.total_revenue}
+    most_profit_arr[-1]
+  end
+
+
 end
